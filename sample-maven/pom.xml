@@ -4,7 +4,6 @@
 	<groupId>com.sample.maven</groupId>
 	<artifactId>sample-maven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -13,7 +12,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
