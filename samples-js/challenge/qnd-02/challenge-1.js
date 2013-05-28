@@ -20,11 +20,6 @@ var Pow = function(exponent){
 	}
 };
 
-var moduloArea = function() {
-	
-	
-}();
-
 
 
 

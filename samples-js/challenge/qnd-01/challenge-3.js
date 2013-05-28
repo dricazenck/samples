@@ -6,5 +6,5 @@ try {
 }
 
 console.log("X: "+x);
-console.log(typeof e); // pq essa porra não existe?
+console.log(typeof e); // pq não existe?
 //criam uma camada a mais no encadeamento de contexto

@@ -15,7 +15,7 @@ var module = (function(){
 		}
 
 	};
-}()); // implementar essa bosta
+}()); 
 
 console.log(module.quadrado(2)); // 4
 console.log(module.quadrado(3)); // 9

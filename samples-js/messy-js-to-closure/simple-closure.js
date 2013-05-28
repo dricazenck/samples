@@ -8,6 +8,7 @@ var validation = (function()
 		else
 			return false;
 	},
+	
 	validateEmail = function (strEmail) 
 	{
 		console.log('validation email '+strEmail);
@@ -22,11 +23,13 @@ var validation = (function()
 		{
 			return validateCpf(cpf)
 		},
+		
 		isValidEmail : function(cpf) 
 		{
 			return validateEmail(cpf)
 		}
 	};
+	
 }());
 
 //validation.isValidCpf('123456789');
@@ -55,6 +58,7 @@ var formResponsibilities = (function()
 			return clearMessages();
 		}
 	};
+	
 }(validation));
 
 formResponsibilities.message("dricazenck");
