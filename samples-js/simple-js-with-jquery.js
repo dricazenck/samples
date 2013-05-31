@@ -132,28 +132,30 @@ var removerMaskCpf = function( strCpf ) {
 }
 
 var isValidCPF = function( strCPF ) {
-	var error = 0;
-	strCPF = removerMaskCpf( strCPF );
-	
-	var Soma;
-    var Resto;
-    Soma = 0;
-    if (strCPF === "00000000000") return false;
-     
-    for(i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-    Resto = (Soma * 10) % 11;
-     
-    if((Resto == 10) || (Resto == 11))  Resto = 0;
-    if( Resto != parseInt(strCPF.substring(9, 10)) ) return false;
-     
-    Soma = 0;
-    for( i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-    Resto = (Soma * 10) % 11;
-     
-    if( (Resto == 10) || (Resto == 11))  Resto = 0;
-    if( Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
-    
-    return true;
+	var regex = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
+    if ( regex.test(strCPF) ) {
+    	strCPF = strCPF.replace(/\./g, '').replace('-', '');
+		
+		var sum;
+	    var rest;
+	    sum = 0;
+	    if (strCPF === "00000000000") return false;
+	     
+	    for ( i=1; i<=9; i++ ) sum = sum + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+	    rest = (sum * 10) % 11;
+	     
+	    if ( (rest == 10) || (rest == 11))  rest = 0;
+	    if ( rest != parseInt(strCPF.substring(9, 10)) ) return false;
+	     
+	    sum = 0;
+	    for (i = 1; i <= 10; i++) sum = sum + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+	    rest = (sum * 10) % 11;
+	     
+	    if ( (rest == 10) || (rest == 11) )  rest = 0;
+	    if ( rest != parseInt(strCPF.substring(10, 11) ) ) return false;
+	    return true;
+    } else
+    	return false;
 }
 
 var changedMsgs = function ( style, msg, add ) {

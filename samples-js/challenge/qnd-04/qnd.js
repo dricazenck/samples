@@ -11,5 +11,5 @@ var tick = function(name) {
     };
 };
 
-var timeout = setTimeout(tick("timeout"), 3000);
-var interval = setInterval(tick("interval"), 3000);
+var timeout = setTimeout(tick("timeout"), 200);
+var interval = setInterval(tick("interval"), 200);
